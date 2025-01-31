@@ -17,7 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from api.views import fetch_movies, search_movies, get_recommendations
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("movies/popular/", fetch_movies),
+    path("movies/search/<str:query>/", search_movies),
+    path("movies/recommend/", get_recommendations),
 ]
